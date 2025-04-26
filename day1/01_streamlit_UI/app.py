@@ -15,8 +15,8 @@ import time
 # ============================================
 # タイトルと説明
 # ============================================
-st.title("Streamlit 初心者向けデモ")
-st.markdown("### コメントを解除しながらStreamlitの機能を学びましょう")
+st.title("AIエンジニアリング実践講座 Day1")
+st.markdown("### 演習1のデモです")
 st.markdown("このデモコードでは、コメントアウトされた部分を順番に解除しながらUIの変化を確認できます。")
 
 # ============================================
@@ -28,27 +28,27 @@ st.sidebar.info("コードのコメントを解除して、Streamlitのさまざ
 # ============================================
 # 基本的なUI要素
 # ============================================
-st.header("基本的なUI要素")
+# st.header("基本的なUI要素")
 
 # テキスト入力
-st.subheader("テキスト入力")
-name = st.text_input("あなたの名前", "ゲスト")
-st.write(f"こんにちは、{name}さん！")
+# st.subheader("テキスト入力")
+# name = st.text_input("あなたの名前", "ゲスト")
+# st.write(f"こんにちは、{name}さん！")
 
 # ボタン
 # st.subheader("ボタン")
-# if st.button("クリックしてください"):
-#     st.success("ボタンがクリックされました！")
+if st.button("click!"):
+    st.success("ボタンがクリックされました！")
 
 # チェックボックス
-# st.subheader("チェックボックス")
-# if st.checkbox("チェックを入れると追加コンテンツが表示されます"):
-#     st.info("これは隠れたコンテンツです！")
+st.subheader("チェックボックス")
+if st.checkbox("じー(´◉ω◉` )"):
+    st.info("こっちみたな！")
 
 # スライダー
-# st.subheader("スライダー")
-# age = st.slider("年齢", 0, 100, 25)
-# st.write(f"あなたの年齢: {age}")
+st.subheader("身長を入力しよう")
+age = st.slider("m", 0, 250, 165)
+st.write(f"あなたの身長: {age}")
 
 # セレクトボックス
 # st.subheader("セレクトボックス")
@@ -63,7 +63,7 @@ st.write(f"こんにちは、{name}さん！")
 # ============================================
 # st.header("レイアウト")
 
-# カラム
+# # カラム
 # st.subheader("カラムレイアウト")
 # col1, col2 = st.columns(2)
 # with col1:
@@ -108,25 +108,26 @@ st.write(f"こんにちは、{name}さん！")
 # st.table(df)
 
 # メトリクス表示
-# st.subheader("メトリクス")
-# col1, col2, col3 = st.columns(3)
-# col1.metric("温度", "23°C", "1.5°C")
-# col2.metric("湿度", "45%", "-5%")
-# col3.metric("気圧", "1013hPa", "0.1hPa")
+st.subheader("現在の天気")
+st.subheader("晴れ")
+col1, col2, col3 = st.columns(3)
+col1.metric("温度", "23°C", "1.5°C")
+col2.metric("湿度", "45%", "-5%")
+col3.metric("気圧", "1013hPa", "0.1hPa")
 
 # ============================================
 # グラフ表示
 # ============================================
 # st.header("グラフの表示")
 
-# ラインチャート
+# # ラインチャート
 # st.subheader("ラインチャート")
 # chart_data = pd.DataFrame(
 #     np.random.randn(20, 3),
 #     columns=['A', 'B', 'C'])
 # st.line_chart(chart_data)
 
-# バーチャート
+# # バーチャート
 # st.subheader("バーチャート")
 # chart_data = pd.DataFrame({
 #     'カテゴリ': ['A', 'B', 'C', 'D'],
@@ -140,13 +141,13 @@ st.write(f"こんにちは、{name}さん！")
 # st.header("インタラクティブ機能")
 
 # プログレスバー
-# st.subheader("プログレスバー")
-# progress = st.progress(0)
-# if st.button("進捗をシミュレート"):
-#     for i in range(101):
-#         time.sleep(0.01)
-#         progress.progress(i / 100)
-#     st.balloons()
+st.subheader("プログレスバー")
+progress = st.progress(0)
+if st.button("進捗をシミュレート"):
+    for i in range(101):
+        time.sleep(0.01)
+        progress.progress(i / 100)
+    st.balloons()
 
 # ファイルアップロード
 # st.subheader("ファイルアップロード")
@@ -155,7 +156,7 @@ st.write(f"こんにちは、{name}さん！")
 #     # ファイルのデータを表示
 #     bytes_data = uploaded_file.getvalue()
 #     st.write(f"ファイルサイズ: {len(bytes_data)} bytes")
-#     
+    
 #     # CSVの場合はデータフレームとして読み込む
 #     if uploaded_file.name.endswith('.csv'):
 #         df = pd.read_csv(uploaded_file)
@@ -183,21 +184,21 @@ st.write(f"こんにちは、{name}さん！")
 # ============================================
 # デモの使用方法
 # ============================================
-st.divider()
-st.subheader("このデモの使い方")
-st.markdown("""
-1. コードエディタでコメントアウトされた部分を見つけます（#で始まる行）
-2. 確認したい機能のコメントを解除します（先頭の#を削除）
-3. 変更を保存して、ブラウザで結果を確認します
-4. 様々な組み合わせを試して、UIがどのように変化するか確認しましょう
-""")
+# st.divider()
+# st.subheader("このデモの使い方")
+# st.markdown("""
+# 1. コードエディタでコメントアウトされた部分を見つけます（#で始まる行）
+# 2. 確認したい機能のコメントを解除します（先頭の#を削除）
+# 3. 変更を保存して、ブラウザで結果を確認します
+# 4. 様々な組み合わせを試して、UIがどのように変化するか確認しましょう
+# """)
 
-st.code("""
-# コメントアウトされた例:
+# st.code("""
+# # コメントアウトされた例:
+# # if st.button("クリックしてください"):
+# #     st.success("ボタンがクリックされました！")
+
+# # コメントを解除した例:
 # if st.button("クリックしてください"):
 #     st.success("ボタンがクリックされました！")
-
-# コメントを解除した例:
-if st.button("クリックしてください"):
-    st.success("ボタンがクリックされました！")
-""")
+# """)
